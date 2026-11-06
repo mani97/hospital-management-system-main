@@ -83,7 +83,6 @@ INSERT INTO medicines (medicine_name, category, manufacturer, batch_number, expi
 (8,'GEN-008','General','2026-11-07 03:01:25','2028-09-30','Lupin','Calcium Tablet',6.50,250),
 (9,'GEN-009','General','2026-11-07 03:01:25','2028-12-31','Torrent','Multivitamin',4.75,350),
 (10,'GEN-010','General','2026-11-07 03:01:25','2028-11-30','Dr Reddys','Iron Tablet',5.25,320),
-
 (11,'CAR-001','Cardiac','2026-11-07 03:01:25','2028-12-31','Torrent','Atorvastatin 10mg',12.50,300),
 (12,'CAR-002','Cardiac','2026-11-07 03:01:25','2028-12-31','Lupin','Clopidogrel 75mg',10.50,250),
 (13,'CAR-003','Cardiac','2026-11-07 03:01:25','2028-09-30','Cipla','Aspirin 75mg',2.50,500),
@@ -94,7 +93,6 @@ INSERT INTO medicines (medicine_name, category, manufacturer, batch_number, expi
 (18,'CAR-008','Cardiac','2026-11-07 03:01:25','2028-12-31','Lupin','Ramipril 5mg',9.25,220),
 (19,'CAR-009','Cardiac','2026-11-07 03:01:25','2028-12-31','Torrent','Carvedilol 6.25mg',7.75,260),
 (20,'CAR-010','Cardiac','2026-11-07 03:01:25','2028-10-31','Cipla','Isosorbide Mononitrate',11.00,180),
-
 (21,'DIA-001','Diabetic','2026-11-07 03:01:25','2028-12-31','USV','Metformin 500mg',5.50,600),
 (22,'DIA-002','Diabetic','2026-11-07 03:01:25','2028-12-31','Sun Pharma','Glimepiride 2mg',7.25,450),
 (23,'DIA-003','Diabetic','2026-11-07 03:01:25','2028-09-30','Lupin','Voglibose 0.3mg',10.50,250),
@@ -105,7 +103,6 @@ INSERT INTO medicines (medicine_name, category, manufacturer, batch_number, expi
 (28,'DIA-008','Diabetic','2026-11-07 03:01:25','2028-10-31','Alkem','Gliclazide MR',11.20,240),
 (29,'DIA-009','Diabetic','2026-11-07 03:01:25','2028-12-31','Abbott','Linagliptin 5mg',22.50,180),
 (30,'DIA-010','Diabetic','2026-11-07 03:01:25','2028-11-30','Lupin','Metformin SR 1000mg',9.90,350),
-
 (31,'BP-001','BP','2026-11-07 03:01:25','2028-12-31','Cipla','Amlodipine 5mg',6.25,500),
 (32,'BP-002','BP','2026-11-07 03:01:25','2028-12-31','Torrent','Telmisartan 40mg',11.50,450),
 (33,'BP-003','BP','2026-11-07 03:01:25','2028-10-31','Sun Pharma','Losartan 50mg',8.75,400),
@@ -116,7 +113,6 @@ INSERT INTO medicines (medicine_name, category, manufacturer, batch_number, expi
 (38,'BP-008','BP','2026-11-07 03:01:25','2028-12-31','Mankind','Valsartan 80mg',12.75,240),
 (39,'BP-009','BP','2026-11-07 03:01:25','2028-10-31','Torrent','Cilnidipine 10mg',9.50,260),
 (40,'BP-010','BP','2026-11-07 03:01:25','2028-12-31','Cipla','Enalapril 5mg',5.25,300),
-
 (41,'BRO-001','Bronchitis','2026-11-07 03:01:25','2028-12-31','Abbott','Ambroxol Syrup',75.00,150),
 (42,'BRO-002','Bronchitis','2026-11-07 03:01:25','2028-09-30','Mankind','Azithromycin 500mg',15.00,300),
 (43,'BRO-003','Bronchitis','2026-11-07 03:01:25','2028-12-31','Cipla','Montelukast 10mg',8.25,300),
@@ -127,7 +123,6 @@ INSERT INTO medicines (medicine_name, category, manufacturer, batch_number, expi
 (48,'BRO-008','Bronchitis','2026-11-07 03:01:25','2028-12-31','Cipla','Deriphyllin',8.50,260),
 (49,'BRO-009','Bronchitis','2026-11-07 03:01:25','2028-11-30','Abbott','Acetylcysteine',9.75,180),
 (50,'BRO-010','Bronchitis','2026-11-07 03:01:25','2028-12-31','Zydus','Dextromethorphan Syrup',65.00,150),
-
 (51,'URI-001','UrineStone','2026-11-07 03:01:25','2028-12-31','Cipla','Potassium Citrate Syrup',85.00,120),
 (52,'URI-002','UrineStone','2026-11-07 03:01:25','2028-12-31','Himalaya','Cystone Tablet',4.50,350),
 (53,'URI-003','UrineStone','2026-11-07 03:01:25','2028-12-31','Charak','Neeri Tablet',6.50,200),
@@ -138,49 +133,41 @@ INSERT INTO medicines (medicine_name, category, manufacturer, batch_number, expi
 (58,'URI-008','UrineStone','2026-11-07 03:01:25','2028-08-31','Cipla','Silodosin 8mg',22.50,160),
 (59,'URI-009','UrineStone','2026-11-07 03:01:25','2028-12-31','Mankind','Potrate MB6',18.00,180),
 (60,'URI-010','UrineStone','2026-11-07 03:01:25','2028-10-31','Abbott','Urimax',16.50,170),
-
 (61,'ANT-001','Antibiotic','2026-11-07 03:01:25','2028-12-31','Cipla','Amoxicillin 500mg',12.50,350),
 (62,'ANT-002','Antibiotic','2026-11-07 03:01:25','2028-10-31','Alkem','Amoxyclav 625',16.50,300),
 (63,'ANT-003','Antibiotic','2026-11-07 03:01:25','2028-09-30','Lupin','Cefixime 200mg',18.75,280),
 (64,'ANT-004','Antibiotic','2026-11-07 03:01:25','2028-12-31','Sun Pharma','Ofloxacin 200mg',14.25,220),
 (65,'ANT-005','Antibiotic','2026-11-07 03:01:25','2028-12-31','Mankind','Levofloxacin 500mg',19.00,180),
-
 (66,'GAS-001','Gastro','2026-11-07 03:01:25','2028-12-31','Dr Reddys','Rabeprazole 20mg',8.25,250),
 (67,'GAS-002','Gastro','2026-11-07 03:01:25','2028-12-31','Cipla','Omeprazole 20mg',5.50,350),
 (68,'GAS-003','Gastro','2026-11-07 03:01:25','2028-11-30','Torrent','Domperidone 10mg',6.00,300),
 (69,'GAS-004','Gastro','2026-11-07 03:01:25','2028-12-31','Abbott','Sucralfate Syrup',95.00,120),
 (70,'GAS-005','Gastro','2026-11-07 03:01:25','2028-09-30','Lupin','Ranitidine 150mg',4.75,220),
-
 (71,'ORT-001','Orthopaedic','2026-11-07 03:01:25','2028-12-31','Mankind','Aceclofenac 100mg',7.50,300),
 (72,'ORT-002','Orthopaedic','2026-11-07 03:01:25','2028-10-31','Sun Pharma','Diclofenac 50mg',5.75,280),
 (73,'ORT-003','Orthopaedic','2026-11-07 03:01:25','2028-12-31','Cipla','Etoricoxib 90mg',12.25,260),
 (74,'ORT-004','Orthopaedic','2026-11-07 03:01:25','2028-09-30','Alkem','Thiocolchicoside',9.50,180),
 (75,'ORT-005','Orthopaedic','2026-11-07 03:01:25','2028-08-31','Lupin','Calcium + D3',7.00,350),
-
 (76,'NEU-001','Neurology','2026-11-07 03:01:25','2028-12-31','Sun Pharma','Gabapentin 300mg',15.50,200),
 (77,'NEU-002','Neurology','2026-11-07 03:01:25','2028-12-31','Torrent','Pregabalin 75mg',18.00,180),
 (78,'NEU-003','Neurology','2026-11-07 03:01:25','2028-10-31','Dr Reddys','Clonazepam 0.5mg',6.25,250),
 (79,'NEU-004','Neurology','2026-11-07 03:01:25','2028-09-30','Cipla','Sodium Valproate',12.75,150),
 (80,'NEU-005','Neurology','2026-11-07 03:01:25','2028-12-31','Alkem','Carbamazepine',8.50,220),
-
 (81,'EMR-001','Emergency','2026-11-07 03:01:25','2028-12-31','Abbott','Adrenaline Injection',35.00,100),
 (82,'EMR-002','Emergency','2026-11-07 03:01:25','2028-12-31','Cipla','Atropine Injection',28.00,100),
 (83,'EMR-003','Emergency','2026-11-07 03:01:25','2028-10-31','Sun Pharma','Dexamethasone Injection',22.00,120),
 (84,'EMR-004','Emergency','2026-11-07 03:01:25','2028-09-30','Lupin','Hydrocortisone Injection',26.00,100),
 (85,'EMR-005','Emergency','2026-11-07 03:01:25','2028-12-31','Torrent','NS 500ml',45.00,80),
-
 (86,'KID-001','Kidney','2026-11-07 03:01:25','2028-12-31','Cipla','Sevelamer',24.50,180),
 (87,'KID-002','Kidney','2026-11-07 03:01:25','2028-10-31','Sun Pharma','Febuxostat 40mg',18.00,200),
 (88,'KID-003','Kidney','2026-11-07 03:01:25','2028-11-30','Alkem','Allopurinol 100mg',8.00,250),
 (89,'KID-004','Kidney','2026-11-07 03:01:25','2028-12-31','Lupin','Torsemide 10mg',6.50,300),
 (90,'KID-005','Kidney','2026-11-07 03:01:25','2028-09-30','Torrent','Furosemide 40mg',4.50,350),
-
 (91,'DER-001','Dermatology','2026-11-07 03:01:25','2028-12-31','Cipla','Cetaphil Cream',120.00,80),
 (92,'DER-002','Dermatology','2026-11-07 03:01:25','2028-11-30','Sun Pharma','Clotrimazole Cream',45.00,150),
 (93,'DER-003','Dermatology','2026-11-07 03:01:25','2028-10-31','Alkem','Mupirocin Ointment',85.00,100),
 (94,'DER-004','Dermatology','2026-11-07 03:01:25','2028-12-31','Lupin','Ketoconazole Soap',65.00,120),
 (95,'DER-005','Dermatology','2026-11-07 03:01:25','2028-09-30','Mankind','Permethrin Cream',55.00,130),
-
 (96,'EYE-001','Eye','2026-11-07 03:01:25','2028-12-31','Cipla','Refresh Tears',95.00,90),
 (97,'EYE-002','Eye','2026-11-07 03:01:25','2028-12-31','Sun Pharma','Moxifloxacin Eye Drops',110.00,100),
 (98,'EYE-003','Eye','2026-11-07 03:01:25','2028-10-31','Torrent','Timolol Eye Drops',85.00,120),
