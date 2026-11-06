@@ -19,6 +19,8 @@ class PatientServiceMethods {
 
     logoutPatient() {
         sessionStorage.removeItem("patient");
+        window.dispatchEvent(new Event('authChange'));
+        window.dispatchEvent(new Event('storage'));
     }
 }
 

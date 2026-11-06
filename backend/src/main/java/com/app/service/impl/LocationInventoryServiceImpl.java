@@ -32,10 +32,15 @@ public class LocationInventoryServiceImpl implements LocationInventoryServiceInt
     @Autowired private PharmacyLocationRepository locationRepo;
     @Autowired private LocationStockRepository stockRepo;
     @Autowired private MedicineRepository medicineRepo;
+    @Autowired private com.app.repository.AdminRepository adminRepo;
 
-    /** Runs at startup so existing installs get a default location + migrated stock. */
+    /** Runs at startup so existing installs get a default location + migrated stock + default admin. */
     @Override
     public void run(String... args) {
+        if (adminRepo.count() == 0) {
+            com.app.entity.modal.Admin admin = new com.app.entity.modal.Admin("Administrator", "admin@gmail.com", "admin123");
+            adminRepo.save(admin);
+        }
         ensureDefaultLocationAndBackfill();
     }
 

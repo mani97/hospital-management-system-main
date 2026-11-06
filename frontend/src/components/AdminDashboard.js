@@ -131,7 +131,18 @@ class AdminDashboard extends Component {
     }
 
     loadAdmin = () => {
-        let admin = JSON.parse(sessionStorage.getItem('admin'));
+        let admin = null;
+        try {
+            admin = JSON.parse(sessionStorage.getItem('admin'));
+        } catch (e) {
+            admin = null;
+        }
+
+        if (!admin) {
+            this.props.history.push('/userLogin');
+            return;
+        }
+
         this.setState({
             adminId: admin.userId,
             firstName: admin.userFirstName,
@@ -205,7 +216,7 @@ class AdminDashboard extends Component {
                     <div className="col-md-4">
                         <div className="card">
                             <img
-                                
+
                                 src="https://cdn-icons-png.flaticon.com/512/10415/10415623.png"
                                 className="card-img-top"
                                 alt="Add Donor"
@@ -263,9 +274,9 @@ class AdminDashboard extends Component {
                             </div>
                         </div>
                     </div>
-               
 
-              
+
+
                     <div className="col-md-4">
                         <div className="card">
                             <img
@@ -286,8 +297,31 @@ class AdminDashboard extends Component {
                             </div>
                         </div>
                     </div>
+
+                    <div className="col-md-4">
+                        <div className="card mb-4 border-success shadow-sm">
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/3004/3004458.png"
+                                className="card-img-top p-3"
+                                alt="Pharmacy & Inventory"
+                                style={{ width: '80%', height: '300px', objectFit: 'contain', margin: '0 auto' }}
+                            />
+                            <div className="card-body">
+                                <h5 className="card-title text-success">
+                                    <i className="fas fa-pills me-1"></i> Pharmacy & Inventory
+                                </h5>
+                                <p className="card-text">Manage medicines, branch stock levels, prescriptions, and billing.</p>
+                                <button
+                                    onClick={() => { this.props.history.push('/pharmacy') }}
+                                    className="btn btn-success"
+                                >
+                                    MANAGE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                </div>
+            </div>
         );
     }
 }

@@ -25,4 +25,10 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long> {
 	
 	Optional<Doctor> findByEmail(String email);
 
+	Optional<Doctor> findByUsername(String username);
+
+	boolean existsByEmail(String email);
+
+	boolean existsByUsername(String username);
+
 }

@@ -51,7 +51,7 @@ public class AdminController {
 		Doctor d = doctorService.saveDoctor(doctor);
 		if(d == null) {
 			System.out.println("BAD REQ IF BLOCK");
-			return ResponseEntity.badRequest().body(null);
+			return ResponseEntity.badRequest().body(new com.app.dto.ErrorResponse("Doctor registration failed. Please check your details.", java.time.LocalDateTime.now()));
 		}
 		return new ResponseEntity<>(d, HttpStatus.CREATED);
 	}

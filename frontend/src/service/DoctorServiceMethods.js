@@ -18,6 +18,8 @@ class DoctorServiceMethods {
 
     doctorLogout() {
         sessionStorage.removeItem("doctor");
+        window.dispatchEvent(new Event('authChange'));
+        window.dispatchEvent(new Event('storage'));
     }
 }
 

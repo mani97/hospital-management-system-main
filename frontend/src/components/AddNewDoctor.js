@@ -260,8 +260,8 @@ const validationSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Email is required'),
   dob: Yup.date().required('Date of Birth is required'),
   password: Yup.string().matches(
-    /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z]).{6,}$/,
-    'Password must be alphanumeric and should contain at least a special character with length 6'
+    /^(?=.*\d)(?=.*[#@$*])(?=.*[a-z]).{5,20}$/,
+    'Password must contain at least 1 digit, 1 lowercase letter, 1 special character (#, @, $, *) and be 5-20 characters long'
   ).required('Password is required'),
   gender: Yup.string().required('Gender is required'),
   mobileNumber: Yup.string().matches(/^\d{10}$/, 'Phone number must be 10 digits').required('Mobile Number is required'),
@@ -307,16 +307,16 @@ addDoctor = (values) => {
           title: 'Success',
           text: 'Doctor added successfully.',
         });
-        this.props.history.push('/adminDashboard');
+        this.props.history.push('/doctor-list-admin');
       })
       .catch((error) => {
-        console.error("Error: ", error.response.data);
+        console.error("Error: ", error);
+        const errorMsg = error.response?.data?.message || error.message || 'Failed to add doctor. Please verify details.';
         Swal.fire({
           icon: 'error',
-          title: 'Error',
-          text: error.response.data.message,
+          title: 'Registration Error',
+          text: errorMsg,
         });
-        this.props.history.push('/adminDashboard');
       });
   };
 
@@ -434,7 +434,7 @@ addDoctor = (values) => {
 <div className="form-group row mt-3 justify-content-center">
   <label htmlFor="fees" className="col-2 col-form-label"><b>Consultation Fee</b></label>
   <div className="col-5">
-    <Field type="number" id="fees" min="200" max="1000" step="50" className="form-control" name="fees" />
+    <Field type="number" id="fees" min="200" max="10000" step="50" className="form-control" name="fees" />
     <ErrorMessage name="fees" component="div" className="text-danger" />
   </div>
 </div>
@@ -462,19 +462,17 @@ addDoctor = (values) => {
               
               <div className="form-group row mt-3 justify-content-center">
                 <label htmlFor="specialization" className="col-2 col-form-label"><b>Specialization</b></label>
-                <div className="col-5 d-flex justify-content-between">
-                  <Field as="select" name="specialization" style={{ width: "7vw", height: "7vh" }}>
-                    <option value="" disabled>--select--</option>
+                <div className="col-5">
+                  <Field as="select" name="specialization" className="form-select">
+                    <option value="" disabled>--select specialization--</option>
                     <option value="Physician">Physician</option>
-                    
-                                    <option value="Covid_Consultant">Covid Consultant</option>
-                                     <option value="Dentist">Dentist</option>
-                                     <option value="Dermatologist">Dermatologist</option>
-                                     <option value="Ophthalmologist">Ophthalmologist</option>
-                                     <option value="Gynecologist">Gynecologist</option>
-                                     <option value="Psychiatrist">Psychiatrist</option>
-                                     <option value="Orthopediologist">Orthopediologist</option>
-                    
+                    <option value="Covid_Consultant">Covid Consultant</option>
+                    <option value="Dentist">Dentist</option>
+                    <option value="Dermatologist">Dermatologist</option>
+                    <option value="Ophthalmologist">Ophthalmologist</option>
+                    <option value="Gynecologist">Gynecologist</option>
+                    <option value="Psychiatrist">Psychiatrist</option>
+                    <option value="Orthopediologist">Orthopediologist</option>
                   </Field>
                   <ErrorMessage name="specialization" component="div" className="text-danger" />
                 </div>

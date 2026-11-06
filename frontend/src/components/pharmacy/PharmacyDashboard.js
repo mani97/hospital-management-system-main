@@ -29,7 +29,12 @@ const PharmacyDashboard = () => {
 
   return (
     <div className="container my-4">
-      <h2 className="text-muted mb-3">Pharmacy Management</h2>
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <h2 className="text-muted mb-0">Pharmacy Management</h2>
+        <Link className="btn btn-outline-secondary" to="/adminDashboard">
+          <i className="fas fa-arrow-left me-1"></i> Admin Dashboard
+        </Link>
+      </div>
       {error && <div className="alert alert-danger">{error}</div>}
       <div className="mb-4">
         <Link className="btn btn-primary me-2" to="/pharmacy/medicines">Medicines</Link>

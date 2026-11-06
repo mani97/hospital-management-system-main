@@ -53,7 +53,7 @@ public class HomeServiceImpl implements HomeServiceIntf {
 		try {
 			Admin admin = adminRepo.findByEmail(email)
 					.orElseThrow(() -> new RuntimeException("User with email: " + email + " doesn't exist."));
-			if (password.equals(admin.getPassword())) {
+			if (password.equals(admin.getPassword()) || passwordEncoder.matches(password, admin.getPassword())) {
 				return new LoginResponse(admin.getId(), admin.getName(), "admin");
 			}
 		} catch (Exception e) {

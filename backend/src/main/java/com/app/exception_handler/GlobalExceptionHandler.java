@@ -44,7 +44,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(UserHandlingException.class)
 	public ResponseEntity<?> handleUserHandlingException(UserHandlingException e) {
 		ErrorResponse resp = new ErrorResponse(e.getMessage(), LocalDateTime.now());
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resp);
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
 	}
 
 	@Override

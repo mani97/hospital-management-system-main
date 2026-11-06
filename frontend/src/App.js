@@ -39,6 +39,7 @@ import EditMedicine from './components/pharmacy/EditMedicine';
 import PrescriptionPage from './components/pharmacy/PrescriptionPage';
 import PharmacyBilling from './components/pharmacy/PharmacyBilling';
 import PharmacyLocations from './components/pharmacy/PharmacyLocations';
+import AdminRoute from './components/AdminRoute';
 
 import {
   Switch,
@@ -98,14 +99,14 @@ function App() {
           <Route exact path="/show-appointment-slots-doctor" component={ShowAppointmentSlots}></Route>
           <Route exact path="/doctor-details-for-patient" component={DoctorDetailsForPatient}></Route>
 
-          {/* Pharmacy module */}
-          <Route exact path="/pharmacy" component={PharmacyDashboard}></Route>
-          <Route exact path="/pharmacy/medicines" component={MedicineList}></Route>
-          <Route exact path="/pharmacy/medicines/add" component={AddMedicine}></Route>
-          <Route exact path="/pharmacy/medicines/edit/:id" component={EditMedicine}></Route>
-          <Route exact path="/pharmacy/prescriptions" component={PrescriptionPage}></Route>
-          <Route exact path="/pharmacy/billing" component={PharmacyBilling}></Route>
-        <Route exact path="/pharmacy/locations" component={PharmacyLocations}></Route>
+          {/* Pharmacy & Medicine Inventory module - restricted exclusively to Admin */}
+          <AdminRoute exact path="/pharmacy" component={PharmacyDashboard}></AdminRoute>
+          <AdminRoute exact path="/pharmacy/medicines" component={MedicineList}></AdminRoute>
+          <AdminRoute exact path="/pharmacy/medicines/add" component={AddMedicine}></AdminRoute>
+          <AdminRoute exact path="/pharmacy/medicines/edit/:id" component={EditMedicine}></AdminRoute>
+          <AdminRoute exact path="/pharmacy/prescriptions" component={PrescriptionPage}></AdminRoute>
+          <AdminRoute exact path="/pharmacy/billing" component={PharmacyBilling}></AdminRoute>
+          <AdminRoute exact path="/pharmacy/locations" component={PharmacyLocations}></AdminRoute>
 
           {/* <Redirect to="/" /> */}
 
@@ -116,7 +117,7 @@ function App() {
         {/* Promo cards/services are shown on every page except the pharmacy module */}
         <Switch>
           <Route path="/pharmacy" render={() => null} />
-          <Route render={() => (<><HorizontalCard /><Services /></>)} />
+          <Route render={() => (<><HorizontalCard /><Services /> <Footer /></>)} />
         </Switch>
         {/* <Footer /> */}
       </div>

@@ -165,6 +165,10 @@ class UserLogin extends Component {
                 const userType = response.data.userType;
                 sessionStorage.setItem(userType, JSON.stringify(response.data));
 
+                // Dispatch auth change event to instantly update navigation and home states
+                window.dispatchEvent(new Event('authChange'));
+                window.dispatchEvent(new Event('storage'));
+
                 let redirectPath = '';
                 switch (userType) {
                     case 'patient':
@@ -187,8 +191,8 @@ class UserLogin extends Component {
                 });
             })
             .catch(error => {
-                console.error("in err ", error.response.data);
-                const errorMessage = error.response.data.message || 'An error occurred while logging in';
+                console.error("Login error: ", error);
+                const errorMessage = error.response?.data?.message || error.message || 'Invalid email or password';
                 Swal.fire({
                     icon: 'error',
                     title: 'Login Error',

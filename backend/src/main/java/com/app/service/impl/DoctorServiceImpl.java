@@ -69,25 +69,21 @@ public class DoctorServiceImpl implements DoctorServiceIntf {
 	public Doctor saveDoctor(DoctorDTO doctor) {
 
 		String email = doctor.getEmail();
-		try {
-			Patient patient = patientRepo.findByEmail(email).get();	
-			return null;
-		} catch (Exception e) {
-			System.out.println("PatientErr : "+e);
+		String username = doctor.getUsername();
+
+		if (doctorRepo.findByEmail(email).isPresent() ||
+			patientRepo.findByEmail(email).isPresent() ||
+			adminRepo.findByEmail(email).isPresent()) {
+			throw new UserHandlingException("Email '" + email + "' is already registered in the system!");
 		}
 
-		try {
-			Admin admin = adminRepo.findByEmail(email).get();
-			return null;
-		} catch (Exception e) {
-			System.out.println("AdminErr : "+e);
+		if (doctorRepo.findByUsername(username).isPresent()) {
+			throw new UserHandlingException("Username '" + username + "' is already taken! Please choose another.");
 		}
 		
 		Doctor newDoctor = Doctor.createDoctor(doctor);
 		newDoctor.setPassword(passwordEncoder.encode(newDoctor.getPassword()));
 		return doctorRepo.save(newDoctor);
-	
-		
 	}
 
 	@Override

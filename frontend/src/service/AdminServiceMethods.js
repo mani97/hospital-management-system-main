@@ -6,6 +6,8 @@ class AdminServiceMethods {
    
     logoutAdmin() {
         sessionStorage.removeItem("admin");
+        window.dispatchEvent(new Event('authChange'));
+        window.dispatchEvent(new Event('storage'));
     }
 
     addNewDoctor(doctor){
